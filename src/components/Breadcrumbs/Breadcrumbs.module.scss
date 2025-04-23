@@ -1,0 +1,54 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: $spacing-small;
+  flex-wrap: wrap;
+  padding: $spacing-medium 0;
+  font-size: $font-size-base;
+  color: $color-primary;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-primary;
+    margin-right: $spacing-small;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: $spacing-small;
+  }
+
+  &__separator {
+    margin: 0 $spacing-small;
+  }
+
+  &__current {
+    margin-right: $spacing-small;
+    color: $color-secondary;
+    font-weight: bold;
+  }
+
+  @include mobile-only {
+    padding: $spacing-small 0;
+    font-size: 12px;
+    gap: 2px;
+
+    &__link,
+    &__current {
+      margin-right: 2px;
+    }
+
+    &__separator {
+      margin: 0 2px;
+    }
+  }
+}
