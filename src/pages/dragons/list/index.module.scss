@@ -1,0 +1,29 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.dragons-list {
+  background-color: $dragons-list-background-color;
+  border-radius: $dragons-list-border-radius;
+
+  &__header {
+    padding: $dragons-list-header-padding;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: $dragons-list-header-border-width solid $color-border;
+  }
+
+  &__title {
+    color: $color-primary;
+    font-size: $dragons-list-title-font-size;
+  }
+
+  &__table {
+    padding: $spacing-medium;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-small;
+  }
+}
