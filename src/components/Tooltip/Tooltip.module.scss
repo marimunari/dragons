@@ -1,0 +1,41 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+  &__content {
+    position: absolute;
+    bottom: $spacing-tooltip-offset;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $color-tooltip-background;
+    color: $color-tooltip-text;
+    padding: $spacing-tooltip-padding-vertical $spacing-tooltip-padding-horizontal;
+    border-radius: $tooltip-border-radius;
+    font-size: $font-size-tooltip;
+    white-space: nowrap;
+    z-index: $z-index-tooltip;
+    box-shadow: 0px 2px 6px $color-tooltip-shadow;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -$spacing-tooltip-arrow-size;
+    width: 0;
+    height: 0;
+    border-left: $spacing-tooltip-arrow-size solid transparent;
+    border-right: $spacing-tooltip-arrow-size solid transparent;
+    border-top: $spacing-tooltip-arrow-size solid $color-tooltip-arrow;
+  }
+
+  @include mobile-only {
+    &__content {
+      font-size: $font-size-base * 0.9;
+      padding: $spacing-small $spacing-medium;
+    }
+  }
+}
