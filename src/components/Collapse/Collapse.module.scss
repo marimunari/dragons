@@ -1,0 +1,47 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.collapse {
+  border-bottom: $border-width-base solid $color-border;
+  padding: $spacing-collapse-padding-vertical 0;
+  margin-bottom: $spacing-collapse-margin-bottom;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    color: $color-text-body;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-header;
+  }
+
+  &__toggle {
+    font-size: $font-size-toggle;
+  }
+
+  &__content {
+    margin-top: $spacing-collapse-content-margin-top;
+    color: $color-text-secondary;
+    line-height: 1.5;
+  }
+
+  @include mobile-only {
+    padding: 8px 0;
+    margin-bottom: 6px;
+    font-size: $font-size-base;
+
+    &__header {
+      font-size: $font-size-base;
+    }
+
+    &__toggle {
+      font-size: 16px;
+    }
+
+    &__content {
+      margin-top: $spacing-small;
+      font-size: $font-size-base;
+      line-height: 1.4;
+    }
+  }
+}
