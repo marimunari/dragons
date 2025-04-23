@@ -1,0 +1,35 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.container {
+  @include center-flex;
+  height: $page-container-height;
+  background-color: $color-page-background;
+  text-align: center;
+  padding: 0 $spacing-page-padding-horizontal;
+}
+
+.title {
+  font-size: $font-size-page-title;
+  margin-bottom: $spacing-page-title-margin-bottom;
+  color: $color-page-title;
+
+  @include mobile-only {
+    font-size: $font-size-page-title * 0.75;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-page-subtitle;
+  margin-bottom: $spacing-page-subtitle-margin-bottom;
+  color: $color-page-subtitle;
+
+  @include mobile-only {
+    font-size: $font-size-page-subtitle * 0.9;
+  }
+}
+
+.description {
+  margin-bottom: $spacing-page-description-margin-bottom;
+  color: $color-page-description;
+}
