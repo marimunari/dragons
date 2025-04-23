@@ -1,0 +1,41 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.textarea {
+  display: flex;
+  align-items: center;
+  gap: $spacing-textarea-gap;
+
+  &__input {
+    width: 100%;
+    padding: $spacing-textarea-padding;
+    font-size: $font-size-textarea;
+    border: $border-width-textarea solid $color-textarea-border;
+    border-radius: $button-border-radius;
+    outline: none;
+    resize: vertical;
+    cursor: text;
+    background-color: $color-textarea-background;
+    color: $color-textarea-text;
+    border-color: $color-textarea-border;
+
+    &--disabled {
+      background-color: $color-textarea-disabled-background;
+      color: $color-textarea-disabled-text;
+      cursor: not-allowed;
+    }
+
+    &--required {
+      border-color: $color-textarea-required;
+    }
+  }
+
+  @include mobile-only {
+    gap: $spacing-small;
+
+    &__input {
+      padding: $spacing-small;
+      font-size: $font-size-base;
+    }
+  }
+}
