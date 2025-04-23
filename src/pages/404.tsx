@@ -1,10 +1,14 @@
 // system
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 import { useRouter } from 'next/router';
 
+// contexts
+import { useAuth } from "@/src/@core/contexts/Auth/AuthContext";
+
 // internal components
 import Button from '@/src/components/Button/Button';
+import Loading from "@/src/components/Loading/Loading";
 
 // internal images
 import SleepDragon from '@/src/assets/images/sleep-dragon-image.png';
@@ -13,7 +17,23 @@ import SleepDragon from '@/src/assets/images/sleep-dragon-image.png';
 import styles from './styles/NotFound.module.scss'
 
 export default function NotFound() {
+  const [loading, setLoading] = useState<boolean>(true);
+  
   const router = useRouter();
+
+  const { isAuthenticated } = useAuth();
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push('/login');
+    } else {
+      setLoading(false);
+    }
+  }, [isAuthenticated, router]);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <section className={styles.container}>
