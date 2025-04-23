@@ -1,0 +1,174 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.table {
+  position: relative;
+  color: $color-table-text;
+
+  &__info {
+    margin-bottom: $spacing-table-info-margin-bottom;
+    text-align: left;
+    font-size: $font-size-table-info;
+  }
+
+  &__wrapper {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__thead {
+    background: $color-table-header-background;
+
+    &-cell {
+      padding: $spacing-table-header-cell-padding;
+      border-bottom: $border-width-table-header solid $color-table-header-border;
+      text-align: left;
+      position: relative;
+
+      &-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &-title {
+        color: $color-table-header-title;
+        text-transform: uppercase;
+        font-size: $font-size-table-header-title;
+      }
+
+      &-actions {
+        display: flex;
+        gap: $spacing-table-header-actions-gap;
+        align-items: center;
+      }
+    }
+  }
+
+  &__filter-box {
+    position: relative;
+
+    &-popup {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: $spacing-table-filter-popup-margin-top;
+      background: $color-table-filter-popup-background;
+      border: $border-width-base solid $color-table-filter-popup-border;
+      padding: $spacing-table-filter-popup-padding;
+      border-radius: $button-border-radius / 2;
+      z-index: $z-index-table-filter-popup;
+      box-shadow: 0 2px 6px rgba($color-primary, 0.1);
+    }
+
+    &-input {
+      background-color: $color-table-filter-input-background;
+      padding: $spacing-table-filter-input-padding-vertical $spacing-table-filter-input-padding-horizontal;
+      font-size: $font-size-base;
+      width: $table-filter-input-width;
+      border-radius: $button-border-radius / 2;
+      border: $border-width-base solid $color-table-filter-popup-border;
+      color: $color-table-filter-input-text;
+    }
+  }
+
+  &__tbody-row {
+    border-bottom: $border-width-table-body-row solid $color-table-body-row-border;
+    font-size: $font-size-table-body;
+
+    &-cell {
+      padding: $spacing-table-body-cell-padding;
+    }
+  }
+
+  &__no-data {
+    text-align: left;
+    padding: $spacing-table-no-data-padding;
+    font-size: $font-size-table-no-data;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $spacing-table-pagination-margin-top;
+
+    &-items-per-page {
+      font-size: $font-size-table-pagination;
+
+      label {
+        margin-right: $spacing-table-pagination-items-label-margin-right;
+      }
+
+      select {
+        padding: $spacing-table-pagination-select-padding;
+        font-size: $font-size-table-pagination;
+        border-radius: $button-border-radius / 2;
+        border: $border-width-base solid $color-table-pagination-select-border;
+        background-color: $color-table-pagination-select-background;
+        color: $color-table-pagination-select-text;
+        width: max-content;
+        height: $table-pagination-select-height;
+      }
+    }
+
+    &-controls {
+      display: flex;
+      gap: $spacing-table-pagination-controls-gap;
+    }
+
+    &-button {
+      width: $table-pagination-button-width;
+      height: $table-pagination-button-height;
+      padding: $spacing-table-pagination-button-padding-vertical $spacing-table-pagination-button-padding-horizontal;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      color: $color-table-pagination-button-text;
+      transition: $transition-table-pagination-button-hover;
+
+      &:hover:not(:disabled) {
+        background-color: $color-table-pagination-button-hover;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: $color-table-pagination-button-disabled-opacity;
+      }
+
+      &--active {
+        background-color: $color-table-pagination-button-active;
+      }
+
+      &--disabled {
+        pointer-events: none;
+        opacity: $color-table-pagination-button-disabled-opacity;
+      }
+    }
+  }
+
+  @include mobile-only {
+    &__wrapper {
+      overflow-x: auto;
+    }
+
+    &__thead &-cell,
+    &__tbody-row &-cell {
+      white-space: nowrap;
+      padding: $spacing-small / 2;
+      font-size: $font-size-base * 0.9; 
+    }
+
+    &__info,
+    &__no-data,
+    &__pagination &-items-per-page,
+    &__pagination &-controls {
+      font-size: $font-size-base * 0.8;
+    }
+
+    &__filter-box &-input {
+      width: 180px;
+      font-size: $font-size-base * 0.9;
+    }
+  }
+}
