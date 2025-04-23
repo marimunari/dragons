@@ -1,0 +1,46 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.header {
+  width: calc(100% - var(--menu-width));
+  height: $header-height;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: $spacing-header-padding-vertical $spacing-header-padding-horizontal;
+  background-color: $color-header-background;
+  box-shadow: 0 2px 4px $color-header-shadow;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-index-header;
+  transition: margin-left $transition-base, width $transition-base;
+  margin-left: var(--menu-width);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  &__user-info {
+    display: flex;
+    align-items: center;
+
+    & > .userContainer {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  @include mobile-only {
+    height: auto;
+    padding: $spacing-small $spacing-small;
+
+    &__user-info {
+      font-size: $font-size-base;
+    }
+  }
+}
