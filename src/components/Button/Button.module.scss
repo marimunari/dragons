@@ -1,0 +1,100 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-base;
+  cursor: pointer;
+  border-radius: $button-border-radius;
+  padding: $spacing-button-padding-vertical $spacing-button-padding-horizontal;
+
+  &__text {
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    width: $font-size-icon;
+    height: $font-size-icon;
+  }
+
+  &--rounded {
+    border-radius: 50%;
+    padding: $spacing-button-padding-vertical;
+    width: $button-rounded-size;
+    height: $button-rounded-size;
+  }
+
+  &--icon {
+    width: $button-icon-size;
+    height: $button-icon-size;
+  }
+
+  &--icon-text {
+    gap: $spacing-button-icon-text-gap;
+    padding: 8px 12px;
+    width: max-content;
+    height: $button-rounded-size;
+  }
+
+  &--blue {
+    background-color: $color-blue;
+    color: $color-white;
+    border: 1px solid $color-blue;
+  }
+
+  &--green {
+    background-color: $color-green;
+    color: $color-white;
+    border: 1px solid $color-green;
+  }
+
+  &--red {
+    background-color: $color-red;
+    color: $color-white;
+    border: 1px solid $color-red;
+  }
+
+  &--yellow {
+    background-color: $color-yellow;
+    color: $color-white;
+    border: 1px solid $color-yellow;
+  }
+
+  &--gray {
+    background-color: $color-gray;
+    color: $color-white;
+    border: 1px solid $color-gray;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    background-color: $color-disabled-background;
+    color: $color-disabled-text;
+  }
+
+  @include mobile-only {
+    padding: 8px 6px;
+    font-size: 12px;
+
+    &--rounded {
+      padding: 8px;
+      width: 32px;
+      height: 32px;
+    }
+
+    &--icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    &--icon-text {
+      width: max-content;
+      padding: 6px 10px;
+      height: 32px;
+      gap: 6px;
+    }
+  }
+}
