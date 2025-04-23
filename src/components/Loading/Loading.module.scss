@@ -1,0 +1,38 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__spinner {
+    border: $spinner-border-width solid $color-spinner-border;
+    border-top: $spinner-border-width solid $color-spinner-top;
+    border-radius: 50%;
+    width: $spinner-size;
+    height: $spinner-size;
+    animation: $animation-spin;
+  }
+
+  &__text {
+    margin-left: $spacing-loading-text-margin-left;
+    font-size: $font-size-loading-text;
+    color: $color-loading-text;
+  }
+
+  @include mobile-only {
+    &__spinner {
+      width: 40px;
+      height: 40px;
+      border-width: 3px;
+      border-top-width: 3px;
+    }
+
+    &__text {
+      font-size: 16px;
+      margin-left: $spacing-small;
+    }
+  }
+}
