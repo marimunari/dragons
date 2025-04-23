@@ -26,6 +26,7 @@
 
 ## 📁 Estrutura do projeto
 
+```bash
 dragons/
 ├── public/         # Arquivos estáticos (imagens, fontes, etc.)
 ├── src/
@@ -45,6 +46,7 @@ dragons/
 │   ├── pages/      # Páginas e rotas da aplicação
 │   └── styles/     # Estilos (Sass)
 └── ...
+```
 
 ## 🧪 Requisitos
 - Node.js 18 ou superior
@@ -60,7 +62,7 @@ $ git clone git@https://github.com/marimunari/dragons.git
 ```
 
 ```bash
-# Acesse a pasta do projeto no terminal
+# Acesse a pasta do projeto no terminal:
 $ cd dragons
 ```
 
