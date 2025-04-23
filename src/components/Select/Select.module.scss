@@ -1,0 +1,57 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.select {
+  position: relative;
+  width: 100%;
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: $spacing-select-icon-left;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: $color-select-icon;
+  }
+
+  &__input {
+    width: 100%;
+    padding: $spacing-select-padding;
+    border: $border-width-select solid $color-select-border;
+    border-radius: $button-border-radius;
+    background-color: $color-select-background;
+    color: $color-select-text;
+    cursor: pointer;
+
+    &--error {
+      border-color: $color-select-error;
+    }
+
+    &--disabled,
+    &:disabled {
+      background-color: $color-select-disabled-background;
+      color: $color-select-disabled-text;
+      cursor: not-allowed;
+    }
+
+    & + &__icon {
+      padding-left: $spacing-select-padding + $spacing-select-icon-left + $spacing-small;
+    }
+  }
+
+  @include mobile-only {
+    &__input {
+      padding: 8px;
+      font-size: $font-size-base;
+    }
+
+    &__icon {
+      left: $spacing-small;
+      font-size: 16px;
+    }
+
+    &__input + &__icon {
+      padding-left: $spacing-small + $spacing-small + 16px;
+    }
+  }
+}
