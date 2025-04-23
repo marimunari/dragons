@@ -15,3 +15,15 @@ export interface ToastModel {
   /** Optional description for the toast */
   description?: string;
 }
+
+// Interface for the context that manages toast state
+export interface ToastContextProps {
+  /** List of all current toasts */
+  toasts: Array<ToastModel>;
+
+  /** Adds a new toast to the list */
+  addToast: (toast: Omit<ToastModel, "id">) => void;
+
+  /** Removes a toast by its ID */
+  removeToast: (id: number) => void;
+}
