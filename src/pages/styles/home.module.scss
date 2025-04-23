@@ -1,0 +1,159 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.home {
+  padding: $spacing-medium;
+  background-color: $color-white;
+
+  &__header {
+    margin-bottom: $spacing-medium * 1.5;
+    text-align: start;
+  }
+
+  &__title {
+    font-size: $font-size-header * 1.5;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+  }
+
+  &__subtitle {
+    font-size: $font-size-base;
+    color: $color-text-secondary;
+  }
+
+  &__highlights {
+    @include grid-layout(200px, $spacing-medium);
+    margin-bottom: $spacing-medium * 1.5;
+
+    @include mobile-only {
+      grid-template-columns: 1fr;
+      gap: $spacing-small * 2;
+    }
+  }
+
+  &__types {
+    margin-bottom: $spacing-medium * 1.5;
+  }
+
+  &__typesList {
+    display: flex;
+    gap: $spacing-small * 3;
+    flex-wrap: wrap;
+    justify-content: start; 
+    
+    @include mobile-only {
+      justify-content: center; 
+    }
+  }
+
+  &__sectionTitle {
+    font-size: $font-size-header;
+    margin-bottom: $spacing-small * 2;
+    color: $color-primary;
+  }
+
+  &__lastDragon {
+    margin-bottom: $spacing-medium * 1.5;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-small * 3;
+    justify-content: flex-end;
+
+    @include mobile-only {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}
+
+.card {
+  background-color: $color-card-background;
+  padding: $spacing-medium;
+  border-radius: $button-border-radius;
+  display: flex;
+  align-items: center;
+  gap: $spacing-small * 3;
+
+  &__icon {
+    flex-shrink: 0;
+    font-size: $font-size-icon * 1.5;
+  }
+
+  &__label {
+    margin: 0;
+    font-weight: $font-weight-bold;
+    color: $color-card-label;
+  }
+
+  &__value {
+    margin: 0;
+    font-size: $font-size-header * 1.5;
+    color: $color-card-value;
+  }
+
+  &--blue {
+    background-color: $color-card-blue-background;
+
+    .card__label, .card__icon {
+      color: $color-card-blue-label;
+    }
+
+    .card__value {
+      color: $color-primary;
+    }
+  }
+
+  &--green {
+    background-color: $color-card-green-background;
+
+    .card__label, .card__icon {
+      color: $color-card-green-label;
+    }
+
+    .card__value {
+      color: $color-primary;
+    }
+  }
+}
+
+.typeCard {
+  background-color: $color-type-card-background;
+  padding: $spacing-small * 3 $spacing-medium;
+  border-radius: $button-border-radius;
+  display: flex;
+  align-items: center;
+  gap: $spacing-small * 2;
+  min-width: 160px;
+
+  &__title {
+    margin: 0;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    @include truncate-text(1);
+  }
+
+  &__count {
+    margin: 0;
+    color: $color-primary;
+  }
+}
+
+.lastDragonCard {
+  background-color: $color-last-dragon-card-background;
+  border: $border-width-base solid $color-last-dragon-card-border;
+  padding: $spacing-small * 3 $spacing-medium;
+  border-radius: $button-border-radius;
+
+  &__name {
+    margin: 0;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+  }
+
+  &__details {
+    margin: 0;
+    color: $color-last-dragon-card-details;
+  }
+}
