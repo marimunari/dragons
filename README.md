@@ -62,7 +62,7 @@ Clone o repositório e instale as dependências:
 
 ```bash
 # Clone o repositório:
-$ git clone git@https://github.com/marimunari/dragons.git
+$ git clone https://github.com/marimunari/dragons.git
 ```
 
 ```bash
