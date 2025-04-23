@@ -1,0 +1,46 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.user-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: $spacing-user-container-padding;
+  position: relative;
+  height: $user-container-height;
+  width: max-content;
+  min-width: max-content;
+
+  &__avatar {
+    width: $user-avatar-size;
+    height: $user-avatar-size;
+    border-radius: 50%;
+    overflow: hidden;
+    border: $border-width-user-avatar solid $color-user-avatar-border;
+    margin-right: $spacing-user-avatar-margin-right;
+  }
+
+  &__avatar-image {
+    object-fit: cover;
+  }
+
+  &__name {
+    font-size: $font-size-user-name;
+    font-weight: $font-weight-bold;
+  }
+
+  @include mobile-only {
+    padding: $spacing-small;
+
+    &__name {
+      font-size: $font-size-base;
+    }
+
+    &__avatar {
+      width: 30px;
+      height: 30px;
+      margin-right: $spacing-small;
+      border-width: 1px;
+    }
+  }
+}
