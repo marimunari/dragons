@@ -1,0 +1,18 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.toast-container {
+  position: fixed;
+  top: $spacing-toast-container-top;
+  right: $spacing-toast-container-right;
+  z-index: $z-index-toast-container;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-toast-container-gap;
+
+  @include mobile-only {
+    top: $spacing-medium;
+    right: $spacing-medium;
+    gap: $spacing-small;
+  }
+}
