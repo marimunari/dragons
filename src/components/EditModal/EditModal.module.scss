@@ -1,0 +1,112 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-overlay-background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: $z-index-modal;
+}
+
+.modalContent {
+  background-color: $color-white;
+  padding: $spacing-modal-padding;
+  border-radius: $modal-border-radius;
+  width: 80%;
+  max-width: $modal-max-width;
+  max-height: 80vh;
+  box-shadow: 0 4px 8px rgba($color-primary, 0.2);
+  color: $color-primary;
+
+  h2 {
+    margin-bottom: $spacing-modal-heading-margin-bottom;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-form-gap;
+}
+
+.historyContainer {
+  max-height: $modal-history-max-height;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: $scrollbar-width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $color-scrollbar-background;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $color-scrollbar-thumb;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $color-scrollbar-thumb-hover;
+  }
+}
+
+.historyLabel {
+  font-weight: $font-weight-bold;
+  margin-top: $spacing-history-label-margin-top;
+}
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-history-item-gap;
+  margin-bottom: $spacing-history-item-margin-bottom;
+
+  .textareaWrapper {
+    width: 95%;
+  }
+}
+
+.buttonContainer {
+  margin-top: $spacing-button-container-margin-top;
+  display: flex;
+  gap: $spacing-button-container-gap;
+  justify-content: flex-end;
+}
+
+@include mobile-only {
+  .modalContent {
+    width: 95%;
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: $spacing-small;
+    }
+  }
+
+  .form {
+    gap: $spacing-small;
+  }
+
+  .historyLabel {
+    margin-top: $spacing-small;
+  }
+
+  .historyItem {
+    gap: $spacing-small;
+    margin-bottom: $spacing-small;
+  }
+
+  .buttonContainer {
+    margin-top: $spacing-small;
+    gap: $spacing-small;
+  }
+}
