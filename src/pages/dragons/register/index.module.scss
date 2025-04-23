@@ -1,0 +1,83 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.registerDragon {
+  background-color: $register-dragon-background-color;
+  border-radius: $register-dragon-border-radius;
+  padding: $spacing-medium;
+
+  &__header {
+    padding: $spacing-medium;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: $register-dragon-header-border-width solid $color-border;
+  }
+
+  &__title {
+    color: $color-primary;
+    font-size: $register-dragon-title-font-size;
+    font-weight: $font-weight-bold;
+  }
+
+  &__formContainer {
+    max-width: $register-dragon-form-max-width;
+    margin: $spacing-large auto;
+    color: $register-dragon-form-container-color;
+  }
+
+  &__inputGroup {
+    margin-bottom: $spacing-medium;
+
+    label {
+      display: block;
+      margin-bottom: $spacing-small / 2;
+    }
+  }
+
+  &__textareaGroup {
+    display: flex;
+    gap: $spacing-small * 2;
+    align-items: center;
+
+    & > div {
+      flex-grow: 1;
+    }
+
+    & > button {
+      flex-shrink: 0;
+    }
+  }
+
+  &__historiesList {
+    margin-top: $spacing-small * 2;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__historyItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-small * 1.5;
+    padding: $spacing-small * 2;
+    background-color: $register-dragon-history-item-background-color;
+    border-radius: 4px;
+    border: $register-dragon-history-item-border-width solid $color-border;
+  }
+
+  &__historyText {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 80%;
+    padding-right: $spacing-small * 2;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-small;
+    justify-content: flex-end;
+    margin-top: $spacing-large / 1.5;
+  }
+}
