@@ -1,0 +1,75 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $login-background-color;
+}
+
+.loginTitle {
+  font-size: $login-title-font-size;
+  color: $login-title-color;
+  margin-bottom: $spacing-medium;
+}
+
+.loginForm {
+  background-color: $login-form-background-color;
+  padding: $login-form-padding;
+  border-radius: $login-border-radius;
+  box-shadow: $login-form-box-shadow;
+  width: 100%;
+  max-width: $login-form-max-width;
+}
+
+.formGroup {
+  margin-bottom: $login-form-group-margin-bottom;
+}
+
+.formButton {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.label {
+  display: block;
+  font-size: $login-label-font-size;
+  margin-bottom: $login-label-margin-bottom;
+  color: $login-label-color;
+}
+
+.inputField {
+  width: 100%;
+  padding: $login-input-padding;
+  font-size: $login-input-font-size;
+  border: 1px solid $login-input-border-color;
+  border-radius: $login-border-radius;
+
+  &:focus {
+    outline: none;
+    border-color: $login-input-focus-border-color;
+  }
+}
+
+.button {
+  width: 100%;
+  padding: $login-button-padding;
+  font-size: $login-button-font-size;
+  background-color: $login-button-background-color;
+  color: $login-button-text-color;
+  border: none;
+  border-radius: $login-border-radius;
+  cursor: pointer;
+
+  &:disabled {
+    background-color: $login-button-disabled-background-color;
+  }
+}
+
+.error {
+  color: $login-error-color;
+  font-size: $login-error-font-size;
+  margin-bottom: $login-error-margin-bottom;
+}
