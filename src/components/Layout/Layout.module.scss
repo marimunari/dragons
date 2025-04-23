@@ -1,0 +1,31 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.layout {
+  background-color: $color-layout-background;
+  min-height: 100vh;
+  transition: all $transition-base;
+  display: flex;
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: margin-left $transition-base;
+    padding-top: $layout-header-height;
+  }
+
+  &__breadcrumbs {
+    padding: 0 $spacing-medium;
+  }
+
+  &__mainWrapper {
+    margin-top: $spacing-small * 2;
+    padding: 0 $spacing-medium $spacing-medium $spacing-medium;
+    box-sizing: border-box;
+  }
+
+  &__main {
+    box-shadow: $color-layout-main-shadow;
+  }
+}
