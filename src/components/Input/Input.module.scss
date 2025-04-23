@@ -1,0 +1,81 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-input-gap;
+
+  &__label {
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    left: $spacing-input-icon-left;
+    pointer-events: none;
+  }
+
+  &__field {
+    width: 100%;
+    padding: $spacing-input-padding;
+    border: $border-width-input solid $color-input-border;
+    border-radius: $button-border-radius;
+    outline: none;
+    background-color: $color-input-background;
+    color: $color-primary;
+    cursor: normal;
+    position: relative;
+
+    &:disabled {
+      background-color: $color-input-disabled-background;
+      cursor: not-allowed;
+    }
+
+    &--error {
+      border-color: $color-input-error;
+    }
+
+    &--with-icon {
+      padding-left: $spacing-input-with-icon-padding-left;
+    }
+  }
+
+  &__error {
+    color: $color-input-error;
+    font-size: $font-size-error;
+  }
+
+  @include mobile-only {
+    gap: $spacing-small;
+
+    &__label {
+      font-size: $font-size-base;
+    }
+
+    &__field {
+      padding: 8px;
+      font-size: $font-size-base;
+    }
+
+    &__icon {
+      left: 8px;
+      font-size: 16px;
+    }
+
+    &--with-icon {
+      padding-left: 30px;
+    }
+
+    &__error {
+      font-size: 10px;
+    }
+  }
+}
