@@ -52,6 +52,10 @@ dragons/
 - Node.js 18 ou superior
 - npm 9 ou superior
 
+## 🌱 Criando o arquivo `.env`
+
+Para configurar as variáveis de ambiente no seu projeto, basta renomear o arquivo `.env.example` para `.env`. Esse arquivo contém a variável necessária para rodar a aplicação corretamente no seu ambiente local.
+
 ## 📦 Rodando a aplicação
 
 Clone o repositório e instale as dependências:
