@@ -1,0 +1,99 @@
+@import '@/src/styles/variables';
+@import '@/src/styles/mixins';
+
+.toast {
+  display: flex;
+  align-items: center;
+  background-color: $color-toast-background;
+  border-left: $toast-border-width solid;
+  padding: $spacing-toast-padding-vertical $spacing-toast-padding-horizontal;
+  border-radius: $toast-border-radius;
+  min-height: $toast-min-height;
+  box-shadow: 0 4px 12px rgba($color-primary, 0.1);
+  position: relative;
+  gap: $spacing-toast-gap;
+
+  &__icon {
+    flex-shrink: 0;
+  }
+
+  &__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-toast-content-gap;
+  }
+
+  &__title {
+    font-size: $font-size-toast-title;
+    font-weight: $font-weight-bold;
+    margin: 0;
+    color: inherit;
+  }
+
+  &__description {
+    font-size: $font-size-toast-description;
+    margin: 0;
+    color: $color-toast-description;
+  }
+
+  &__close {
+    position: absolute;
+    top: $spacing-toast-close-top;
+    right: $spacing-toast-close-right;
+    background: none;
+    border: none;
+    font-size: $font-size-toast-close-button;
+    color: $color-toast-close-button;
+    cursor: pointer;
+    transition: $transition-toast-close-hover;
+
+    &:hover {
+      color: $color-toast-close-button-hover;
+    }
+  }
+
+  &--success {
+    border-color: $color-toast-success;
+
+    .toast__title {
+      color: $color-toast-success;
+    }
+  }
+
+  &--error {
+    border-color: $color-toast-error;
+
+    .toast__title {
+      color: $color-toast-error;
+    }
+  }
+
+  &--warning {
+    border-color: $color-toast-warning;
+
+    .toast__title {
+      color: $color-toast-warning;
+    }
+  }
+
+  @include mobile-only {
+    padding: 16px;
+    gap: $spacing-small;
+    min-height: auto;
+
+    &__title {
+      font-size: 16px;
+    }
+
+    &__description {
+      font-size: $font-size-base;
+    }
+
+    &__close {
+      top: 8px;
+      right: 10px;
+      font-size: 18px;
+    }
+  }
+}
